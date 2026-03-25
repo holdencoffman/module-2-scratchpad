@@ -6,7 +6,7 @@
 class Person
 {
 public:
-   Person(std::string n, int a);
+   Person(std::string n, int a, std::string p, std::string e);
    std::string getName() const;
    void setName(std::string n);
    int getAge() const;

@@ -1,7 +1,11 @@
 #include "person.h"
 
-Person::Person(std::string n, int a)
+Person::Person(std::string n, int a, std::string p, std::string e)
 {
+   setAge(a);
+   name = n;
+   phone = p;
+   email = e;
 }
 
 std::string Person::getName() const
@@ -21,7 +25,14 @@ int Person::getAge() const
 
 void Person::setAge(int a)
 {
-   age = a;
+   if (a >= 0)
+   {
+      age = a;
+   }
+   else
+   {
+      age = 25;
+   }
 }
 
 std::string Person::toString() const

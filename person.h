@@ -1,18 +1,23 @@
 #ifndef PERSON_H
 #define PERSON
 #include <string>
+#include <sstream>
 
 class Person
 {
 public:
    Person(std::string n, int a);
-   std::string getName();
-   void setName(std::string name);
-   int getAge();
+   std::string getName() const;
+   void setName(std::string n);
+   int getAge() const;
    void setAge(int a);
-   void greet();
+   std::string toString() const;
+   std::string getPhone() const;
+   std::string getEmail() const;
+   void setPhone(std::string p);
+   void setEmail(std::string e);
 
-private:
+protected:
    int age;
    std::string name;
    std::string phone;

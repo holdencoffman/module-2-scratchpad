@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include "product.h"
 
 // 1st way of making an enum
 enum baseType{COFFEE, TEA, CREAM};
@@ -11,7 +12,7 @@ enum baseType{COFFEE, TEA, CREAM};
 // 2nd way of making an enum: this is what LLM's seem to prefer
 enum class sizeType{SMALL, MED, LARGE};
 
-class drink
+class drink : public product
 {
 public:
    // 3rd way of making an enum
@@ -19,6 +20,7 @@ public:
    // 4th way of making an enum (unscoped inside a class - burger class enums will be this)
    enum tempType{HOT, ICE, BLEND};
    drink(baseType b, tempType t, sizeType s, std::string dairy, std::string flavor);
+   drink(baseType b, tempType t, sizeType s, std::string dairy, std::string flavor, int pn, std::string desc);
    std::string getBaseStr() const;
    std::string getTemperature() const;
    std::string getSize() const;

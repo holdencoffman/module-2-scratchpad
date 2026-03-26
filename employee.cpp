@@ -1,12 +1,13 @@
 #include "employee.h"
 
-Employee::Employee() : Person("Harry Potter", 12, "555-1212", "hpotter@aol.com")
+Employee::Employee() : Person("Harry Potter", 12, "555-1212", "hpotter@aol.com"), preferredDrink(COFFEE, drink::HOT, sizeType::SMALL, "Milk", "Caramel")
 {
    salary = 6000;
    hireDate = "2020-01-01";
 }
 
-Employee::Employee(std::string n, int a, std::string p, std::string e, double s, std::string h) : Person(n, a, p, e)
+// Didn't fully catch the point of this constructor below but it's supposed to work better for composition than the one above
+Employee::Employee(std::string n, int a, std::string p, std::string e, double s, std::string h, drink d) : Person(n, a, p, e), preferredDrink(d)
 {
    setSalary(s);
    setHireDate(h);

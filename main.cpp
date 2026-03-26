@@ -7,6 +7,7 @@ int main()
 {
    Person p("Harry Potter", 12, "111-2222", "email@aol.com");
    Employee e;
+   e.getName();
 
    std::cout << p.toString() << std::endl;
    std::cout << std::setfill('-');

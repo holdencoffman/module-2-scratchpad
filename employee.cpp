@@ -2,6 +2,8 @@
 
 Employee::Employee() : Person("Harry Potter", 12, "555-1212", "hpotter@aol.com")
 {
+   salary = 6000;
+   hireDate = "2020-01-01";
 }
 
 Employee::Employee(std::string n, int a, std::string p, std::string e, double s, std::string h) : Person(n, a, p, e)
@@ -12,20 +14,26 @@ Employee::Employee(std::string n, int a, std::string p, std::string e, double s,
 
 void Employee::setSalary(double s)
 {
+   if (s < 6000)
+   {
+      salary = 6000;
+   }
+   salary = s;
 }
 
 void Employee::setHireDate(std::string h)
 {
+   hireDate = h;
 }
 
 double Employee::getSalary() const
 {
-   return 0.0;
+   return salary;
 }
 
 std::string Employee::getHireDate() const
 {
-   return std::string();
+   return hireDate;
 }
 
 std::string Employee::toString() const

@@ -142,6 +142,7 @@ std::string drink::toString() const
 {
    std::ostringstream out;
    out << std::setprecision(2) << std::fixed << std::showpoint;
+   out << product::toString() << std::endl;
    out << "Size: " << getSize() << std::endl;
    out << "Base: " << getBaseStr() << std::endl;
    out << "Temperature: " << getTemperature() << std::endl;

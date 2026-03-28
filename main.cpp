@@ -4,6 +4,7 @@
 #include "employee.h"
 #include "product.h"
 #include "donut.h"
+#include "bagel.h"
 
 // Lecture activity M02-a
 // 1. create another class to inherit from product
@@ -31,6 +32,9 @@ int main()
    std::cout << prod.toString() << std::endl;
    std::cout << don.toString() << std::endl;
    std::cout << myDrink.toString() << std::endl;
+
+   Bagel myBagel(EVERY, CRE, true, 2);
+   std::cout << myBagel.toString() << std::endl;
 
    return 0;
 }

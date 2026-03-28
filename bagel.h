@@ -3,7 +3,6 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
-#include <cmath>
 #include "product.h"
 
 // Lecture activity M02-a

@@ -14,7 +14,7 @@ void resetStream();
 int main()
 {
    timeType time = inputTimeType();
-   int hour = inputHour(time);
+   /*int hour = inputHour(time);
    int min = inputMinuteOrSecond("minutes");
    int sec = inputMinuteOrSecond("seconds");
    partType partOfDay = partType::PM;
@@ -23,15 +23,14 @@ int main()
       partOfDay = inputPartOfDay();
    }
    clockType myClock(hour, min, sec, time, partOfDay);
-   std::cout << myClock.printTime() << std::endl;
+   std::cout << myClock.printTime() << std::endl; */
 
 
    return 0;
 }
 
-timeType inputTimeType();
+timeType inputTimeType()
 {
-   timeType time;
    int timeInt;
 /* std::cout << "Is the clock " << std::endl;
    std::cout << "1. Twelve Hour" << std::endl;
@@ -49,7 +48,9 @@ timeType inputTimeType();
       std::cin >> timeInt;
    }
 
-   return time;
+   timeInt = (timeInt / 12) - 1;
+
+   return formats[timeInt];
 }
 
 void resetStream()

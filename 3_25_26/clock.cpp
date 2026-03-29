@@ -1,110 +1,63 @@
 #include "clock.h"
 
-void Clock::setTime(int h, int m, int s)
+clockType::clockType(int h, int m, int s, timeType tt, partType pt)
 {
-    setHour(h);
-    setMinute(m);
-    setSecond(s);
+   setTime(h, m, s, tt, pt);
 }
 
-void Clock::setHour(int h)
+void clockType::setTime(int h, int m, int s, timeType tt, partType pt)
 {
-    if (h < 0 || h > 23)
-    {
-        h = 0;
-    }
-    hr = h;
+   hr = h;
+   min = m;
+   sec = s;
+   time = tt;
+   part = pt;
 }
 
-void Clock::setMinute(int m)
+void clockType::getTime(int & h, int & m, int & s) const
 {
-    if (m < 0 || m > 59)
-    {
-        m = 0;
-    }
-    min = m;
-}
-void Clock::setSecond(int s)
-{
-    if (s < 0 || s > 59)
-    {
-        s = 0;
-    }
-    sec = s;
+   h = hr;
+   m = min;
+   s = sec;
 }
 
-Clock::Clock(int h, int m, int s)
+std::string clockType::printTime() const
 {
-    setTime(h, m, s);
+   std::ostringstream out;
+   out << std::setfill('0');
+   out << std::setw(2) << hr << ":" << std::setw(2) << min << ":" << std::setw(2) << sec;
+   return out.str();
 }
 
-void Clock::getTime(int &h, int &m, int &s) const
+void clockType::incrementSeconds()
 {
-    h = hr;
-    m = min;
-    s = sec;
+   sec++;
+   if (sec == 60)
+   {
+      sec = 0;
+      incrementMinutes();
+   }
 }
 
-int Clock::getHour() const
+void clockType::incrementMinutes()
 {
-    return hr;
+   min++;
+   if (min == 60)
+   {
+      min = 0;
+      incrementHours();
+   }
 }
 
-int Clock::getMinute() const
+void clockType::incrementHours()
 {
-    return min;
-}
-
-int Clock::getSecond() const
-{
-    return sec;
-}
-
-std::string Clock::printTime() const
-{
-    std::ostringstream out;
-    out << std::setfill('0');
-    out << std::setw(2) << hr << ":" << std::setw(2) << min << ":" << std::setw(2) << sec;
-    // std::string out;
-    // out = out + std::to_string(hr) + ":" + std::to_string(min) + ":" + std::to_string(sec);
-    return out.str();
-}
-
-void Clock::incrementSeconds()
-{
-    sec++;
-    if (sec == 60)
-    {
-        sec = 0;
-        incrementMinutes();
-    }
-}
-
-void Clock::incrementMinutes()
-{
-    min++;
-    if (min == 60)
-    {
-        min = 0;
-        incrementHours();
-    }
-}
-
-void Clock::incrementHours()
-{
-    hr++;
-    if (hr == 24)
-    {
-        hr = 0;
-    }
-}
-
-bool Clock::equalTime(const Clock &otherClock) const
-{
-    return hr == otherClock.hr && min == otherClock.min && sec == otherClock.sec;
-}
-
-void Clock::clockTick()
-{
-    incrementSeconds();
+   hr++;
+   if (time == TWENTYFOUR && hr == 24)
+   {
+      hr = 0;
+   }
+   else if (time == TWELVE && hr == 12)
+   {
+      hr = 0;
+   }
 }

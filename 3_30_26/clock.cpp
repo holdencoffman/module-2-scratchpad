@@ -26,6 +26,17 @@ std::string clockType::printTime() const
    std::ostringstream out;
    out << std::setfill('0');
    out << std::setw(2) << hr << ":" << std::setw(2) << min << ":" << std::setw(2) << sec;
+   if (time == TWELVE)
+   {
+      if (part == partType::AM)
+      {
+         out << " AM";
+      }
+      else
+      {
+         out << " PM";
+      }
+   }
    return out.str();
 }
 

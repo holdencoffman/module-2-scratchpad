@@ -23,7 +23,7 @@ const timeType formats[2] = {TWELVE, TWENTYFOUR};
 class clockType
 {
 public:
-   clockType(int, int = 0, int = 0, timeType = TWENTYFOUR, partType = partType::PM);
+   clockType(int = 0, int = 0, int = 0, timeType = TWENTYFOUR, partType = partType::AM);
    void setTime(int, int, int, timeType, partType);
    void getTime(int&, int&, int&) const;
    std::string printTime() const;

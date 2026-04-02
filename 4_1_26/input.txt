@@ -1,0 +1,54 @@
+Enter a number between 1 and 100: 50
+
+You guessed 50
+Enter a number greater than 0 1
+
+Please enter the list size between 1 and 10: 2
+
+Enter the number of showtimes: 4
+
+Filling in clock for showtime #1
+Is the clock 12 hour or 24 hour? 12
+
+Enter the clock's hour: 11
+
+Enter the clock's minutes: 40
+
+Is it 
+1. AM
+2. PM1
+
+Filling in clock for showtime #2
+Is the clock 12 hour or 24 hour? 12
+
+Enter the clock's hour: 3
+
+Enter the clock's minutes: 05
+
+Is it 
+1. AM
+2. PM2
+
+Filling in clock for showtime #3
+Is the clock 12 hour or 24 hour? 12
+
+Enter the clock's hour: 6
+
+Enter the clock's minutes: 30
+
+Is it 
+1. AM
+2. PM2
+
+Filling in clock for showtime #4
+Is the clock 12 hour or 24 hour? 12
+
+Enter the clock's hour: 9
+
+Enter the clock's minutes: 55
+
+Is it 
+1. AM
+2. PM2
+
+| Project Hail Mary                        | PG-13 | 166 mins | 11:40:00 AM 03:05:00 PM 06:30:00 PM 09:55:00 PM 

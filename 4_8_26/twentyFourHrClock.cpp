@@ -75,6 +75,31 @@ TwentyFourHrClock operator+(int minutesToAdd, TwentyFourHrClock c)
     return c + minutesToAdd;
 }
 
+int TwentyFourHrClock::toSeconds(const TwentyFourHrClock &c)
+{
+   return c.getSecond() + c.getMinute() * 60 + c.getHour() * 3600;
+}
+
+bool TwentyFourHrClock::operator<(TwentyFourHrClock rightClock)
+{
+   return toSeconds(*this) < toSeconds(rightClock);
+}
+
+bool TwentyFourHrClock::operator<=(TwentyFourHrClock rightClock)
+{
+   return toSeconds(*this) <= toSeconds(rightClock);
+}
+
+bool TwentyFourHrClock::operator>(TwentyFourHrClock rightClock)
+{
+   return toSeconds(*this) > toSeconds(rightClock);
+}
+
+bool TwentyFourHrClock::operator>=(TwentyFourHrClock rightClock)
+{
+   return toSeconds(*this) >= toSeconds(rightClock);
+}
+
 std::istream &operator>>(std::istream &in, TwelveHrClock &c)
 {
     int h, m, s;
